@@ -18,7 +18,7 @@ listNotes() {
 	for (var note_id = 0; note_id< note_id.length; ++note_id) {
 		
 		console.log("Note ID: ",+ [note_id] );
-		console.log("By Athot" + this.author);
+		console.log("By Author" + this.author);
 	}
 	
 }
