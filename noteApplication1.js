@@ -4,7 +4,8 @@
      /********************************************************************************************************************/
      /********************************************************************************************************************/
 
-class Note {
+ 
+ class Note {
 	constructor(note_content, author){
 		this.author = author.toUpperCase(author);
 		this.note_content = note_content;
@@ -27,15 +28,13 @@ class Note {
  	}
  	
  	listNotes() {
- 	
+ 	console.log("************************************************")
 		for(i = 0; i < this.notes.length; i++){
-			console.log("");
 			console.log("");
 			console.log("Note_ID " + (i+1));
 			console.log([this.notes[i].note_content]);
-			console.log(" ")
+			console.log(" ");
 			console.log("By : ", this.notes[i].author);
-			console.log("");
 			console.log("");
 		} 
  	}
@@ -75,13 +74,13 @@ class Note {
 	 delete(note_id){
 	 	
 	 	if (note_id<=[this.notes.length])
-	 	this.notes.splice(note_id);
-	 	else
+	 	this.notes.splice((note_id),1);
+	 	else{
 	 	console.log("this  page is empty");
 	 	console.log("Use listNotes to check list note");
 	 
 	}
  
- 
+	 }
  
  }
