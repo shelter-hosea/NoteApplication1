@@ -5,8 +5,7 @@
      /********************************************************************************************************************/
 
 
- 
-	 class Note {
+ class Note {
 	constructor(note_content, author){
 		this.author = author.toUpperCase(author);
 		this.note_content = note_content;
@@ -25,12 +24,14 @@
  		var note = new Note(note_content, this.author);
  		console.log("");
 		this.notes.push(note);
-		
+		console.log("");
  	}
  	
  	listNotes() {
  	
 		for(i = 0; i < this.notes.length; i++){
+			console.log("");
+			console.log("");
 			console.log("Note_ID " + (i+1));
 			console.log([this.notes[i].note_content]);
 			console.log(" ")
@@ -44,7 +45,7 @@
 		if (this.notes[note_id])
 		 return this.notes[note_id];
 		else 
-		 return console.log("Epmty page!, Enter a  page lower number");	
+		 return console.log("Epmty page!, Please check listNotes");	
  	}
  
  	search(search_text){
@@ -53,39 +54,23 @@
 			if (note.note_content.indexOf(search_text) !== -1) {
 				return note.note_content.indexOf(search_text) !== -1;
 			}
-			else return console.log ("character not found in note");
+			else return console.log ("character not found! ");
 		});
 		console.log(filtered);
 	}
 	
 	 delete(note_id){
 	 	
-	 	console.log("");
-		console.log("");
-	 	console.log(this.notes[note_id]);
-	 	console.log("");
-		console.log("");
-	 }
-	// 	deleted_page = this.note[note_id];
-		
-	// 	if (this.notes.splice(note_id) ){
-	// 	this.notes.splice(note_id);
-		
-	// 	console.log ([deleted_word] + "was suscessful deleted");
-	// 	}
-	// 	else console.log("Page was blank");
-	// }
- //}
+	 	if (note_id<=[this.notes.length])
+	 	this.notes.splice(note_id);
+	 	else
+	 	console.log("this  page is empty");
+	 	console.log("Use listNotes to check list")
+	 
+	}
  
  
- }
-		
-	}
-	
-	delete_note(note_id) {
-		
-		delete this.note[note_id];
-	}
+ 
 	
 	edit(note_id,new_content) {
 		
