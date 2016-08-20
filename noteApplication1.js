@@ -5,7 +5,6 @@
      /********************************************************************************************************************/
 
  
- 
  class Note {
 	constructor(note_content, author){
 		this.author = author.toUpperCase(author);
@@ -37,7 +36,8 @@
 			console.log(" ");
 			console.log("By : ", this.notes[i].author);
 			console.log("");
-	
+			// if ( ([this.notes[i].note_content] === undefined))
+			// return null ;
 		} 
 	console.log("***************************************************************")
 	;console.log(                                                            );	
@@ -77,21 +77,30 @@
 	
 	 delete(note_id){
 	 	
-	 	if (note_id<=[this.notes.length]){
+	 if ( ([this.notes[note_id].note_content] === undefined) && (note_id <= [this.note.lenght])) {
+		 for (i= note_id ;i < [this.notes.length]; ++i)	{
+	 temp = this.notes[note_id+1].note_content ;
+	 //this.notes.insert(note_id,temp) ;
+	 //console.log([temp] );
+	 ////at the end if splice
+	 
+ }
+	 }
+	 
+ 
+	 	 else if (note_id<=[this.notes.length]){
 	 
 	 	temp = this.notes[note_id].note_content;
+	 	delete this.notes[note_id]
 	 	this.notes.splice((note_id),1);
 	 	console.log([temp] );
 	 	console.log("                                                              ");
 	 	console.log("The above notes by  " + [this.notes[note_id].author]+ " has been deleted sucessfully from your Note");
-	 	// for (i = note_id;i< this.note.length ;++i)
-	 	// this.notes[i] =this.notes[i+1];
-	 	// 
-	 	// select the remainig element and splice
-	 	// this.notes.push(note);
-	 	// this.notes.spice((this.notes.length-1));
+	
 	 	 }
-   else  {
+	 	 //else console.log ("You can't delete that page because it's empty")
+	 	 
+   else if ( note_id>this.notes.length)  {
 	 	console.log("this  page is empty");
 	 	console.log("Use listNotes() to check list note");
 	 
@@ -104,8 +113,14 @@
  var na =  new NoteApplication ("shelter") ;
  na.create("gfjgjhgjhgjgjhgjhg");
 na.create("i am getting old");
+///na.listNotes();
+na.delete(0);
+//na.listNotes();
+//na.delete(0);
 na.listNotes();
-na.delete(2)
+
+
+
 
 
 
