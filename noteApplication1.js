@@ -35,15 +35,14 @@ class NoteApplicaiton {
 
 	search(search_text) {
 		for(let i in this.notes){
-				if(search_text === this.notes[i]) {
-					console.log('Showing result for search: ' + search_text)
-					console.log('Note ID: ' + i)
-					console.log(this.notes[i])
-					console.log('BY Author ' + this.author)
+			if(search_text === this.notes[i]) {
+				console.log('Showing result for search: ' + search_text)
+				console.log('Note ID: ' + i)
+				console.log(this.notes[i])
+				console.log('BY Author ' + this.author)
 				}
 			}
 		
-
 		
 	}
 	
@@ -54,6 +53,6 @@ class NoteApplicaiton {
 	
 	edit(note_id,new_content) {
 		
-		  this.note[note_id] = new_content;
+		this.note[note_id] = new_content;
 	}
 }
