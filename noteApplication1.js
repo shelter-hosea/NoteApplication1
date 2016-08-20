@@ -15,7 +15,7 @@ class NoteApplicaiton {
 	}
 	create (note_content) {
 
-		this.noteList.push(note_content)
+		this.noteList.push(note_content);
 	}
 
 
