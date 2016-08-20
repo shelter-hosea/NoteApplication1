@@ -5,7 +5,7 @@
      /********************************************************************************************************************/
 
  
- class Note {
+  class Note {
 	constructor(note_content, author){
 		this.author = author.toUpperCase(author);
 		this.note_content = note_content;
@@ -77,26 +77,31 @@
 	
 	 delete(note_id){
 	 	
-	 if ( ([this.notes[note_id].note_content] === undefined) && (note_id <= [this.note.lenght])) {
-		 for (i= note_id ;i < [this.notes.length]; ++i)	{
-	 temp = this.notes[note_id+1].note_content ;
-	 //this.notes.insert(note_id,temp) ;
-	 //console.log([temp] );
-	 ////at the end if splice
+	//  if ( ([this.notes[note_id].note_content] === undefined) && (note_id <= [this.note.lenght]))
+	//  console.log("am in the server")
+	// //  {
+	// // 	 for (i= note_id ;i < [this.notes.length]; ++i)	{
+	// //  temp = this.notes[note_id+1].note_content ;
+	// //  //this.notes.insert(note_id,temp) ;
+	// //  //console.log([temp] );
+	// //  ////at the end if splice
 	 
- }
-	 }
+ //}
+	//  }
 	 
  
-	 	 else if (note_id<=[this.notes.length]){
-	 
-	 	temp = this.notes[note_id].note_content;
-	 	delete this.notes[note_id]
-	 	this.notes.splice((note_id),1);
-	 	console.log([temp] );
+	 	 if (note_id<=[this.notes.length]){
+	 	 	
+	 	for (i = note_id;i< [this.notes.length];++i ){
+	 	temp = this.notes[note_id +1].note_content;
+	 	delete this.notes[note_id].note_content;
+	 ////this.notes.splice((note_id),1);
+	   console.log([temp] );
+	 	this.notes[note_id].note_content = temp; //.insert(note_id, temp);
 	 	console.log("                                                              ");
 	 	console.log("The above notes by  " + [this.notes[note_id].author]+ " has been deleted sucessfully from your Note");
-	
+	 	}
+	 	this.notes.splice([this.notes.length-1],1) ;
 	 	 }
 	 	 //else console.log ("You can't delete that page because it's empty")
 	 	 
@@ -118,7 +123,8 @@ na.delete(0);
 //na.listNotes();
 //na.delete(0);
 na.listNotes();
-
+na.delete(0);
+// na.create("i am getting old");
 
 
 
