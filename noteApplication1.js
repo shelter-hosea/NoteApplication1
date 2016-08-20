@@ -5,6 +5,7 @@
      /********************************************************************************************************************/
 
  
+ 
  class Note {
 	constructor(note_content, author){
 		this.author = author.toUpperCase(author);
@@ -28,7 +29,7 @@
  	}
  	
  	listNotes() {
- 	console.log("************************************************")
+ 	console.log("***************************************************************");
 		for(i = 0; i < this.notes.length; i++){
 			console.log("");
 			console.log("Note_ID " + (i+1));
@@ -36,7 +37,10 @@
 			console.log(" ");
 			console.log("By : ", this.notes[i].author);
 			console.log("");
+	
 		} 
+	console.log("***************************************************************")
+	;console.log(                                                            );	
  	}
  
  get(note_id){
@@ -73,11 +77,17 @@
 	
 	 delete(note_id){
 	 	
-	 	if (note_id<=[this.notes.length])
+	 	if (note_id<=[this.notes.length]){
+	 
+	 	temp = this.notes[note_id].note_content;
 	 	this.notes.splice((note_id),1);
+	 	console.log([temp] );
+	 	console.log("                                                              ");
+	 	console.log("The above notes by  " + [this.notes[note_id].author]+ " has been deleted sucessfully from your Note");
+	 	}
 	 	else{
 	 	console.log("this  page is empty");
-	 	console.log("Use listNotes to check list note");
+	 	console.log("Use listNotes() to check list note");
 	 
 	}
  
