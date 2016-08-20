@@ -89,21 +89,30 @@
  //}
 	//  }
 	 
- 
-	 	 if (note_id<=[this.notes.length]){
+	 
+	 if ([this.notes.length] == 1  ){
+	 	console.log(" hacked suceed");
+	 	delete this.notes[note_id].note_content ;
+	 	console.log("Your Note is now empty,use create to add");
+	 }
+	 	 else if (note_id<=[this.notes.length] && ([this.notes.length] !==1) ) {
 	 	 	
-	 	for (i = note_id;i< [this.notes.length];++i ){
+	 	for (i = note_id; i < [this.notes.length] ; ++i) {
 	 	temp = this.notes[note_id +1].note_content;
 	 	delete this.notes[note_id].note_content;
 	 ////this.notes.splice((note_id),1);
-	   console.log([temp] );
+	  // console.log([temp] );
 	 	this.notes[note_id].note_content = temp; //.insert(note_id, temp);
 	 	console.log("                                                              ");
 	 	console.log("The above notes by  " + [this.notes[note_id].author]+ " has been deleted sucessfully from your Note");
 	 	}
 	 	this.notes.splice([this.notes.length-1],1) ;
+	 	// else if ([this.notes.lenght] == 1 )
+	 	// console.log(" hacked suceed");
 	 	 }
-	 	 //else console.log ("You can't delete that page because it's empty")
+	 else if ([this.notes.lenght] == 1 )
+	 	console.log(" hacked suceed");	 
+	 	//else console.log ("You can't delete that page because it's empty")
 	 	 
    else if ( note_id>this.notes.length)  {
 	 	console.log("this  page is empty");
@@ -115,6 +124,20 @@
  
  }
  
+ var na =  new NoteApplication ("shelter") ;
+ na.create("gfjgjhgjhgjgjhgjhg");
+na.create("i am getting old");
+///na.listNotes();
+na.delete(0);
+//na.listNotes();
+//na.delete(0);
+na.listNotes();
+na.delete(0);
+// na.create("i am getting old");
+
+
+
+
  var na =  new NoteApplication ("shelter") ;
  na.create("gfjgjhgjhgjgjhgjhg");
 na.create("i am getting old");
