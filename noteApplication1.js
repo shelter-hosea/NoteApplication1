@@ -5,7 +5,8 @@
      /********************************************************************************************************************/
 
  
-  class Note {
+ 
+class Note {
 	constructor(note_content, author){
 		this.author = author.toUpperCase(author);
 		this.note_content = note_content;
@@ -95,7 +96,7 @@
 	 	delete this.notes[note_id].note_content ;
 	 	console.log("Your Note is now empty,use create to add");
 	 }
-	 	 else if (note_id<=[this.notes.length] && ([this.notes.length] !==1) ) {
+	 	 else if (note_id<=[this.notes.length] && ([this.notes.length] ==2) ) {
 	 	 	
 	 	for (i = note_id; i < [this.notes.length] ; ++i) {
 	 	temp = this.notes[note_id +1].note_content;
@@ -134,24 +135,5 @@ na.delete(0);
 na.listNotes();
 na.delete(0);
 // na.create("i am getting old");
-
-
-
-
- var na =  new NoteApplication ("shelter") ;
- na.create("gfjgjhgjhgjgjhgjhg");
-na.create("i am getting old");
-///na.listNotes();
-na.delete(0);
-//na.listNotes();
-//na.delete(0);
-na.listNotes();
-na.delete(0);
-// na.create("i am getting old");
-
-
-
-
-
 
 
