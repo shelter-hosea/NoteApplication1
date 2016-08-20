@@ -84,8 +84,14 @@
 	 	console.log([temp] );
 	 	console.log("                                                              ");
 	 	console.log("The above notes by  " + [this.notes[note_id].author]+ " has been deleted sucessfully from your Note");
-	 	}
-	 	else{
+	 	// for (i = note_id;i< this.note.length ;++i)
+	 	// this.notes[i] =this.notes[i+1];
+	 	// 
+	 	// select the remainig element and splice
+	 	// this.notes.push(note);
+	 	// this.notes.spice((this.notes.length-1));
+	 	 }
+   else  {
 	 	console.log("this  page is empty");
 	 	console.log("Use listNotes() to check list note");
 	 
@@ -94,3 +100,14 @@
 	 }
  
  }
+ 
+ var na =  new NoteApplication ("shelter") ;
+ na.create("gfjgjhgjhgjgjhgjhg");
+na.create("i am getting old");
+na.listNotes();
+na.delete(2)
+
+
+
+
+
