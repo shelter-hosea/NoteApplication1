@@ -4,8 +4,7 @@
      /********************************************************************************************************************/
      /********************************************************************************************************************/
 
-
- class Note {
+class Note {
 	constructor(note_content, author){
 		this.author = author.toUpperCase(author);
 		this.note_content = note_content;
@@ -50,13 +49,27 @@
  
  	search(search_text){
 		var filtered = this.notes.filter(function (note) {
-			//return search_text != -1;
+			
 			if (note.note_content.indexOf(search_text) !== -1) {
-				return note.note_content.indexOf(search_text) !== -1;
+		
+		 //return note.note_content.indexOf(search_text) !== -1 ;
+			
 			}
-			else return console.log ("character not found! ");
-		});
-		console.log(filtered);
+			
+			else if (([note.note_content.indexOf(search_text) !==-1]) && (search_text.length ==1)){
+			
+			console.log ("character not found! ");
+			
+			
+			}
+			else if (([note.note_content.indexOf(search_text) !== -1]) && (search_text.length >=1)){
+			console.log("word not found!");
+				
+			}
+		//	console.log([search_text.length])	
+		
+			});
+//console.log(filtered);
 	}
 	
 	 delete(note_id){
@@ -65,15 +78,10 @@
 	 	this.notes.splice(note_id);
 	 	else
 	 	console.log("this  page is empty");
-	 	console.log("Use listNotes to check list")
+	 	console.log("Use listNotes to check list note");
 	 
 	}
  
  
  
-	
-	edit(note_id,new_content) {
-		
-		this.note[note_id] = new_content;
-	}
-}
+ }
